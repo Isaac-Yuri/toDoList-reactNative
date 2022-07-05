@@ -3,6 +3,16 @@ import { TextInputProps } from "react-native";
 
 import { Input } from "./styles";
 
-export function InputTask(props: TextInputProps) {
-  return <Input placeholder="Insira sua nova tarefa aqui" />;
+export function InputTask({
+  value,
+  onChangeText,
+  placeholder,
+}: TextInputProps) {
+  return (
+    <Input
+      value={value}
+      placeholder={placeholder ? placeholder : ""}
+      onChangeText={onChangeText}
+    />
+  );
 }

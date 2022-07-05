@@ -5,5 +5,6 @@ export const Input = styled(TextInput)`
   border: 2px black;
   border-radius: 8px;
   font-size: 18px;
-  padding: 10px;
+  padding: 5px 10px;
+  width: 100%;
 `;

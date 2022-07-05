@@ -5,5 +5,6 @@ export const ContainerApplication = styled.View`
 `;
 
 export const BoxInputAndAdd = styled.View`
-  align-items: center
+  align-items: center;
+  width: 100%;
 `;

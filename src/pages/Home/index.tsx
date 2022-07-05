@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, View, Text } from "react-native";
 
 import { Header } from "../../components/Header";
 import { InputTask } from "../../components/InputTask";
@@ -7,22 +7,20 @@ import { InputTask } from "../../components/InputTask";
 import { ContainerApplication, BoxInputAndAdd } from "./styles";
 
 export const Home = () => {
-  const [inputData, setInputData] = useState("");
+  const [inputData, setInputData] = useState<string>();
 
   return (
-    <>
+    <View>
       <Header />
       <ContainerApplication>
         <BoxInputAndAdd>
           <InputTask
-            onChangeText={(value) => {
-              setInputData(value);
-            }}
             value={inputData}
+            onChangeText={(text) => setInputData(text)}
+            placeholder='Digite sua tarefa aqui'
           />
-          <TouchableOpacity>clique</TouchableOpacity>
         </BoxInputAndAdd>
       </ContainerApplication>
-    </>
+    </View>
   );
 };
