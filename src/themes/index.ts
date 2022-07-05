@@ -3,4 +3,9 @@ export const themes = {
     colorApplication: "#ea4965",
   },
   borderRadiusDefault: "8px",
+  fonts: {
+    sizes: {
+      defaultFontSize: 18,
+    }
+  }
 };

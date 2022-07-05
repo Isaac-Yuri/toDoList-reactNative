@@ -12,5 +12,5 @@ export const AddButtonStyled = styled.TouchableOpacity`
 
 export const TextStyled = styled.Text`
   color: black;
-  font-size: 18px;
+  font-size: ${themes.fonts.sizes.defaultFontSize}px;
 `;

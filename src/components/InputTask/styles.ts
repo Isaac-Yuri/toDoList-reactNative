@@ -6,7 +6,7 @@ import { themes } from "../../themes";
 export const Input = styled(TextInput)`
   border: 1px black;
   border-radius: ${themes.borderRadiusDefault};
-  font-size: 18px;
+  font-size: ${themes.fonts.sizes.defaultFontSize}px;
   padding: 5px 10px;
   height: 100%;
   flex: 4;
