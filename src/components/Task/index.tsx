@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
 
-import Checkbox from "expo-checkbox";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
 import { ITask } from "../../types";
