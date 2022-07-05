@@ -30,7 +30,7 @@ export const Home = () => {
           <InputTask
             value={inputData}
             onChangeText={(text) => setInputData(text)}
-            placeholder="Digite sua tarefa aqui"
+            placeholder="Adicione uma tarefa"
           />
           <AddButton>Add</AddButton>
         </BoxInputAndAdd>
