@@ -1,5 +1,7 @@
 import React from "react";
-import { ScrollView, View } from "react-native";
+import { ScrollView, View, FlatList } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+
 import { ITask } from "../../types";
 
 import { Task } from "../Task";
@@ -16,21 +18,22 @@ export const Tasks: React.FC<ITasksProps> = ({
   changeTaskState,
 }) => {
   return (
-    <ScrollView style={{ marginBottom: 43 }}>
-      <View>
-        {tasks.map((task) => {
+    <SafeAreaView>
+      <FlatList
+        data={tasks}
+        renderItem={({ item: task }) => {
           return (
             <Task
               id={task.id}
-              key={task.id}
               title={task.title}
               isComplete={task.isComplete}
               handleDeleteTask={handleDeleteTask}
               changeTaskState={changeTaskState}
             />
           );
-        })}
-      </View>
-    </ScrollView>
+        }}
+        style={{ marginBottom: 100 }}
+      />
+    </SafeAreaView>
   );
 };
