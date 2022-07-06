@@ -21,6 +21,7 @@ export const CheckboxStyled = styled(Checkbox)`
 
 export const TitleTask = styled.Text`
   font-size: ${themes.fonts.sizes.defaultFontSize - 2}px;
+  width: 60%;
 `;
 
 export const ButtonDelete = styled.TouchableOpacity`
