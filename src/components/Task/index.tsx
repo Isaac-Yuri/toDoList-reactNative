@@ -28,7 +28,14 @@ export const Task: React.FC<ITaskProps> = ({
         onValueChange={() => changeTaskState(id)}
         color={isChecked ? themes.colors.colorApplication : ""}
       />
-      <TitleTask>{title}</TitleTask>
+      <TitleTask
+        style={{
+          textDecorationLine: isChecked ? "line-through" : "none",
+          color: isChecked? '#7a7a7a': '#000',
+        }}
+      >
+        {title}
+      </TitleTask>
       <ButtonDelete
         onPress={() => {
           handleDeleteTask(id);
