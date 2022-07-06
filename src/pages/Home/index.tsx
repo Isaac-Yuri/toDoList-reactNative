@@ -22,11 +22,16 @@ export const Home = () => {
   ]);
 
   function handleAddNewTask(newTask: string) {
+    if (inputData.length === 0) {
+      return;
+    }
+
     const arrayWithNewTask: ITask[] = [
       ...tasks,
       { id: uuidV4(), title: newTask, isComplete: false },
     ];
     setTasks(arrayWithNewTask);
+    setInputData("");
   }
 
   function handleDeleteTask(idTask: string) {
