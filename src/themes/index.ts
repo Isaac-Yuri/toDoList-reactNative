@@ -1,6 +1,6 @@
 export const themes = {
   colors: {
-    colorApplication: "#ea4965",
+    colorApplication: "#228B22",
   },
   borderRadiusDefault: "8px",
   fonts: {
