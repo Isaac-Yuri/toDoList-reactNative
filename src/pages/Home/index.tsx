@@ -30,6 +30,15 @@ export const Home = () => {
     setTasks(arrayWithNewTask);
   }
 
+  function handleDeleteTask(idTask: string) {
+    const arrayWithTaskDeleted = tasks.filter((task) => {
+      if (idTask !== task.id) {
+        return task;
+      }
+    });
+    setTasks(arrayWithTaskDeleted);
+  }
+
   return (
     <>
       <Header />
@@ -40,9 +49,11 @@ export const Home = () => {
             onChangeText={(text) => setInputData(text)}
             placeholder="Adicione uma tarefa"
           />
-          <AddButton handleAddNewTask={handleAddNewTask} inputData={inputData}>Add</AddButton>
+          <AddButton handleAddNewTask={handleAddNewTask} inputData={inputData}>
+            Add
+          </AddButton>
         </BoxInputAndAdd>
-        <Tasks tasks={tasks} />
+        <Tasks handleDeleteTask={handleDeleteTask} tasks={tasks} />
       </ContainerApplication>
     </>
   );

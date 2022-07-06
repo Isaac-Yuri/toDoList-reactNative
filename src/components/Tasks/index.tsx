@@ -5,9 +5,10 @@ import { Task } from "../Task";
 
 interface ITasksProps {
   tasks: ITask[];
+  handleDeleteTask: (idTask: string) => void;
 }
 
-export const Tasks: React.FC<ITasksProps> = ({ tasks }) => {
+export const Tasks: React.FC<ITasksProps> = ({ tasks, handleDeleteTask }) => {
   return (
     <>
       {tasks.map((task) => {
@@ -17,6 +18,7 @@ export const Tasks: React.FC<ITasksProps> = ({ tasks }) => {
             key={task.id}
             title={task.title}
             isComplete={task.isComplete}
+            handleDeleteTask={handleDeleteTask}
           />
         );
       })}
