@@ -16,7 +16,7 @@ export const Tasks: React.FC<ITasksProps> = ({
   changeTaskState,
 }) => {
   return (
-    <ScrollView>
+    <ScrollView style={{ marginBottom: 43 }}>
       <View>
         {tasks.map((task) => {
           return (
