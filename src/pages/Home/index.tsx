@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { View } from "react-native";
 
 import { Header } from "../../components/Header";
 import { InputTask } from "../../components/InputTask";
@@ -39,6 +38,16 @@ export const Home = () => {
     setTasks(arrayWithTaskDeleted);
   }
 
+  function changeTaskState(idTask: string) {
+    const arrayWithChangedTaskState = tasks.map((task) => {
+      if (idTask === task.id) {
+        return { ...task, isComplete: !task.isComplete };
+      }
+      return task;
+    });
+    setTasks(arrayWithChangedTaskState);
+  }
+
   return (
     <>
       <Header />
@@ -53,7 +62,11 @@ export const Home = () => {
             Add
           </AddButton>
         </BoxInputAndAdd>
-        <Tasks handleDeleteTask={handleDeleteTask} tasks={tasks} />
+        <Tasks
+          changeTaskState={changeTaskState}
+          handleDeleteTask={handleDeleteTask}
+          tasks={tasks}
+        />
       </ContainerApplication>
     </>
   );

@@ -6,9 +6,14 @@ import { Task } from "../Task";
 interface ITasksProps {
   tasks: ITask[];
   handleDeleteTask: (idTask: string) => void;
+  changeTaskState: (idTask: string) => void;
 }
 
-export const Tasks: React.FC<ITasksProps> = ({ tasks, handleDeleteTask }) => {
+export const Tasks: React.FC<ITasksProps> = ({
+  tasks,
+  handleDeleteTask,
+  changeTaskState,
+}) => {
   return (
     <>
       {tasks.map((task) => {
@@ -19,6 +24,7 @@ export const Tasks: React.FC<ITasksProps> = ({ tasks, handleDeleteTask }) => {
             title={task.title}
             isComplete={task.isComplete}
             handleDeleteTask={handleDeleteTask}
+            changeTaskState={changeTaskState}
           />
         );
       })}

@@ -9,6 +9,7 @@ import { themes } from "../../themes";
 
 interface ITaskProps extends ITask {
   handleDeleteTask: (idTask: string) => void;
+  changeTaskState: (idTask: string) => void;
 }
 
 export const Task: React.FC<ITaskProps> = ({
@@ -16,14 +17,15 @@ export const Task: React.FC<ITaskProps> = ({
   isComplete,
   id,
   handleDeleteTask,
+  changeTaskState,
 }) => {
-  const [isChecked, setChecked] = useState(isComplete);
+  const isChecked = isComplete;
 
   return (
     <TaskStyled>
       <CheckboxStyled
         value={isChecked}
-        onValueChange={setChecked}
+        onValueChange={() => changeTaskState(id)}
         color={isChecked ? themes.colors.colorApplication : ""}
       />
       <TitleTask>{title}</TitleTask>

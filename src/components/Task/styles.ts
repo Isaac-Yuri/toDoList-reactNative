@@ -16,6 +16,7 @@ export const TaskStyled = styled.View`
 
 export const CheckboxStyled = styled(Checkbox)`
   border-radius: 100px;
+  padding: 10px;
 `;
 
 export const TitleTask = styled.Text`
