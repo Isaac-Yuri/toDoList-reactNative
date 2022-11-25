@@ -23,6 +23,7 @@ export const Home = () => {
 
   function handleAddNewTask(newTask: string) {
     if (inputData.length === 0) {
+      alert("Campo vazio");
       return;
     }
 
