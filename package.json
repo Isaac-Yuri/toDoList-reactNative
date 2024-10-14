@@ -10,24 +10,24 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "@types/react": "~18.2.45",
-    "expo": "~50.0.17",
-    "expo-checkbox": "~2.7.0",
-    "expo-status-bar": "~1.11.1",
-    "react": "18.2.0",
-    "react-native": "0.73.6",
-    "react-native-get-random-values": "~1.8.0",
-    "react-native-safe-area-context": "4.8.2",
-    "react-native-vector-icons": "^10.1.0",
-    "styled-components": "^6.1.9",
-    "uuid": "^9.0.1"
+    "@types/react": "~18.3.11",
+    "expo": "~51",
+    "expo-checkbox": "~3.0.0",
+    "expo-status-bar": "~1.12.1",
+    "react": "^18.3.1",
+    "react-native": "0.75.4",
+    "react-native-get-random-values": "~1.11.0",
+    "react-native-safe-area-context": "4.11.0",
+    "react-native-vector-icons": "^10.2.0",
+    "styled-components": "^6.1.13",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0",
+    "@babel/core": "^7.25.8",
     "@types/react-native": "^0.73.0",
     "@types/react-native-vector-icons": "^6.4.18",
-    "@types/uuid": "^9.0.8",
-    "typescript": "^5.3.0"
+    "@types/uuid": "^10.0.0",
+    "typescript": "^5.6.3"
   },
   "private": true
 }
