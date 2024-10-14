@@ -65,7 +65,7 @@ export const Home = () => {
             placeholder="Adicione uma tarefa"
           />
           <AddButton handleAddNewTask={handleAddNewTask} inputData={inputData}>
-            Add
+            Adicionar
           </AddButton>
         </BoxInputAndAdd>
         <Tasks
