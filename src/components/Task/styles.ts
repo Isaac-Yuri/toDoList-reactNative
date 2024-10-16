@@ -27,3 +27,7 @@ export const TitleTask = styled.Text`
 export const ButtonDelete = styled.TouchableOpacity`
   padding: 8px;
 `;
+
+export const ButtonEdit = styled.TouchableOpacity`
+  padding: 8px;
+`;

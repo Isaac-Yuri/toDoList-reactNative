@@ -14,6 +14,8 @@ import { ITask } from "../../types";
 
 export const Home = () => {
   const [inputData, setInputData] = useState<string>("");
+  const [isUpdatingATask, setIsUpdatingATask] = useState<boolean>(false);
+  const [idOfTheTaskToUpdate, setIdOfTheTaskToUpdate] = useState<string>("");
   const [tasks, setTasks] = useState<ITask[]>([
     { id: uuidV4(), title: "Estudar", isComplete: true },
     { id: uuidV4(), title: "Treinar", isComplete: false },
@@ -35,12 +37,21 @@ export const Home = () => {
     setInputData("");
   }
 
-  function handleDeleteTask(idTask: string) {
-    const arrayWithTaskDeleted = tasks.filter((task) => {
-      if (idTask !== task.id) {
-        return task;
+  function handleUpdateTitleTask(idTask: string, newTitle: string) {
+    const arrayWithTitleTaskUpdated = tasks.map((task) => {
+      if (idTask === task.id) {
+        return { ...task, title: newTitle };
       }
+      return task;
     });
+    setTasks(arrayWithTitleTaskUpdated);
+    setIsUpdatingATask(false);
+    setInputData("");
+    setIdOfTheTaskToUpdate("");
+  }
+
+  function handleDeleteTask(idTask: string) {
+    const arrayWithTaskDeleted = tasks.filter((task) => task.id !== idTask);
     setTasks(arrayWithTaskDeleted);
   }
 
@@ -64,14 +75,23 @@ export const Home = () => {
             onChangeText={(text) => setInputData(text)}
             placeholder="Adicione uma tarefa"
           />
-          <AddButton handleAddNewTask={handleAddNewTask} inputData={inputData}>
-            Adicionar
+          <AddButton
+            handleAddNewTask={handleAddNewTask}
+            handleUpdateTitleTask={handleUpdateTitleTask}
+            idOfTheTaskToUpdate={idOfTheTaskToUpdate}
+            isUpdatingATask={isUpdatingATask}
+            inputData={inputData}
+          >
+            {isUpdatingATask ? "Atualizar" : "Adicionar"}
           </AddButton>
         </BoxInputAndAdd>
         <Tasks
           changeTaskState={changeTaskState}
           handleDeleteTask={handleDeleteTask}
           tasks={tasks}
+          setInputData={setInputData}
+          setIsUpdatingATask={setIsUpdatingATask}
+          setIdOfTheTaskToUpdate={setIdOfTheTaskToUpdate}
         />
       </ContainerApplication>
     </>
