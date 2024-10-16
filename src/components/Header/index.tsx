@@ -1,9 +1,11 @@
 import React from "react";
 import { HeaderContainer, TitleHeader } from "./styles";
+import { ButtonSettings } from "../ButtonSettings";
 
 export const Header: React.FC = () => {
   return (
-    <HeaderContainer>
+    <HeaderContainer style={{ position:"relative" }}>
+      <ButtonSettings />
       <TitleHeader>Lista de tarefas</TitleHeader>
     </HeaderContainer>
   );
