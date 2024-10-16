@@ -2,7 +2,7 @@ import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import { Home } from "./src/pages/Home";
+import { Home } from "./src/screens/Home";
 
 import { themes } from "./src/themes";
 
