@@ -1,9 +1,8 @@
 import React, { Dispatch, SetStateAction } from "react";
-import { ScrollView, View, FlatList } from "react-native";
+import { FlatList } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { ITask } from "../../types";
-
 import { Task } from "../Task";
 
 interface ITasksProps {
@@ -27,21 +26,20 @@ export const Tasks: React.FC<ITasksProps> = ({
     <SafeAreaView>
       <FlatList
         data={tasks}
-        renderItem={({ item: task }) => {
-          return (
-            <Task
-              id={task.id}
-              title={task.title}
-              isComplete={task.isComplete}
-              handleDeleteTask={handleDeleteTask}
-              changeTaskState={changeTaskState}
-              setInputData={setInputData}
-              setIsUpdatingATask={setIsUpdatingATask}
-              setIdOfTheTaskToUpdate={setIdOfTheTaskToUpdate}
-            />
-          );
-        }}
-        style={{ marginBottom: 100 }}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item: task }) => (
+          <Task
+            id={task.id}
+            title={task.title}
+            isComplete={task.isComplete}
+            handleDeleteTask={handleDeleteTask}
+            changeTaskState={changeTaskState}
+            setInputData={setInputData}
+            setIsUpdatingATask={setIsUpdatingATask}
+            setIdOfTheTaskToUpdate={setIdOfTheTaskToUpdate}
+          />
+        )}
+        contentContainerStyle={{ paddingBottom: 300 }}
       />
     </SafeAreaView>
   );
