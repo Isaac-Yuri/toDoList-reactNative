@@ -3,3 +3,8 @@ export interface ITask {
   title: string;
   isComplete: boolean;
 }
+
+export type RootStackParamList = {
+  Home: undefined; 
+  Settings: undefined;
+};

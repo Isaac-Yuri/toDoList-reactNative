@@ -10,9 +10,13 @@ import "react-native-get-random-values";
 
 import { ContainerApplication, BoxInputAndAdd } from "./styles";
 
-import { ITask } from "../../types";
+import { ITask, RootStackParamList } from "../../types";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-export const Home = () => {
+type HomeProps = NativeStackScreenProps<RootStackParamList, "Home">;
+
+export const Home: React.FC<HomeProps> = ({ navigation }) => {
   const [inputData, setInputData] = useState<string>("");
   const [isUpdatingATask, setIsUpdatingATask] = useState<boolean>(false);
   const [idOfTheTaskToUpdate, setIdOfTheTaskToUpdate] = useState<string>("");
@@ -66,8 +70,8 @@ export const Home = () => {
   }
 
   return (
-    <>
-      <Header />
+    <SafeAreaView>
+      <Header navigation={navigation} />
       <ContainerApplication>
         <BoxInputAndAdd>
           <InputTask
@@ -94,6 +98,6 @@ export const Home = () => {
           setIdOfTheTaskToUpdate={setIdOfTheTaskToUpdate}
         />
       </ContainerApplication>
-    </>
+    </SafeAreaView>
   );
 };
