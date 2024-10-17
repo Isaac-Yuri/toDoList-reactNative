@@ -20,27 +20,25 @@ export const Tasks: React.FC<ITasksProps> = ({
   changeTaskState,
   setInputData,
   setIsUpdatingATask,
-  setIdOfTheTaskToUpdate
+  setIdOfTheTaskToUpdate,
 }) => {
   return (
-    <SafeAreaView>
-      <FlatList
-        data={tasks}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item: task }) => (
-          <Task
-            id={task.id}
-            title={task.title}
-            isComplete={task.isComplete}
-            handleDeleteTask={handleDeleteTask}
-            changeTaskState={changeTaskState}
-            setInputData={setInputData}
-            setIsUpdatingATask={setIsUpdatingATask}
-            setIdOfTheTaskToUpdate={setIdOfTheTaskToUpdate}
-          />
-        )}
-        contentContainerStyle={{ paddingBottom: 300 }}
-      />
-    </SafeAreaView>
+    <FlatList
+      data={tasks}
+      keyExtractor={(item) => item.id}
+      renderItem={({ item: task }) => (
+        <Task
+          id={task.id}
+          title={task.title}
+          isComplete={task.isComplete}
+          handleDeleteTask={handleDeleteTask}
+          changeTaskState={changeTaskState}
+          setInputData={setInputData}
+          setIsUpdatingATask={setIsUpdatingATask}
+          setIdOfTheTaskToUpdate={setIdOfTheTaskToUpdate}
+        />
+      )}
+      contentContainerStyle={{ paddingBottom: 300 }}
+    />
   );
 };
