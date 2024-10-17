@@ -1,19 +1,15 @@
 import React from "react";
 import { HeaderContainer, TitleHeader } from "./styles";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack"
-import { ButtonSettings } from "../ButtonSettings";
-
-import { RootStackParamList } from "../../types";
-
-type IHeaderProps = {
-  navigation: NativeStackNavigationProp<RootStackParamList, "Home">;
+interface IHeaderProps {
+  title?: string;
+  children?: React.ReactNode;
 };
 
-export const Header: React.FC<IHeaderProps> = ({ navigation }) => {
+export const Header: React.FC<IHeaderProps> = ({ children, title }) => {
   return (
     <HeaderContainer style={{ position: "relative" }}>
-      <ButtonSettings navigation={navigation} />
-      <TitleHeader>Lista de tarefas</TitleHeader>
+      {children}
+      <TitleHeader>{title}</TitleHeader>
     </HeaderContainer>
   );
 };

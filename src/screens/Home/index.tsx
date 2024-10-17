@@ -13,6 +13,7 @@ import { ContainerApplication, BoxInputAndAdd } from "./styles";
 import { ITask, RootStackParamList } from "../../types";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { ButtonSettings } from "../../components/ButtonSettings";
 
 type HomeProps = NativeStackScreenProps<RootStackParamList, "Home">;
 
@@ -71,7 +72,9 @@ export const Home: React.FC<HomeProps> = ({ navigation }) => {
 
   return (
     <SafeAreaView>
-      <Header navigation={navigation} />
+      <Header title="Lista de tarefas">
+        <ButtonSettings navigation={navigation} />
+      </Header>
       <ContainerApplication>
         <BoxInputAndAdd>
           <InputTask
